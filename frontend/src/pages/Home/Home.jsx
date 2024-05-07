@@ -7,12 +7,11 @@ import AppDownload from '../../components/AppDownload/AppDownload';
 
 import './home.css';
 
-
 const Home = () => {
     const [category, setCategory] = useState('all');
-    
+    console.log('render')
     return (
-        <div>
+        <div id="home">
             <Header />
             <ExploreMenu category={category} setCategory={setCategory} />
             <FoodDisplay category={category} />

@@ -1,8 +1,13 @@
 .navbar-wrapper {
-    position: sticky;
     background-color: white;
     top: 0px;
     z-index: 1000;
+    transition: box-shadow .3s;
+    position: sticky;
+}
+
+.navbar-wrapper.shadow {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
@@ -123,7 +128,12 @@
     .navbar-menu {
         display: none;
     }
-
 }
 
+
+@media (max-width:390px) {
+    .navbar .logo {
+        width: 70px;
+    }
+}
 

@@ -1,22 +1,67 @@
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { selectHomeNavActive } from '../../store/slices/homeNavActive.slice';
 import { assets } from '../../assets/assets';
+
 import './navbar.css';
 
-const Navbar = () => {
 
-  const [menu, setMenu] = useState("home");
+const Navbar = () => {
+    const activeMenu = useSelector(selectHomeNavActive);
+    const [hasShadow, setHasShadow] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+          const isTop = window.scrollY < 100;
+
+          if (isTop === hasShadow) {
+            setHasShadow(!isTop);
+          }
+        };
+    
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+      }, [hasShadow]);
+
+    const scrollToHome = () => {
+        const homeElement = document.getElementById('root');
+        homeElement.scrollIntoView();
+    };
 
     return (
-        <div className="navbar-wrapper">
+        <div className={hasShadow ? "navbar-wrapper shadow" : "navbar-wrapper"}>
             <div className="app-wrapper">
                 <div className="navbar">
                     <img src={assets.logo} alt="" className="logo" />
                     <ul className="navbar-menu">
-                        <Link to="/" onClick={() => setMenu("home")} className={menu === "home" ? "active" : "null"}>home</Link>
-                        <a href="#explore-menu" onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : "null"}>menu</a>
-                        <a href="#app-download" onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : "null"}>mobile-app</a>
-                        <a href="#footer" onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : "null"}>contact us</a>
+                        <Link 
+                            to="/" 
+                            onClick={() => {
+                                scrollToHome();
+                            }} 
+                            className={activeMenu === "home" ? "active" : "null"}>
+                                home
+                        </Link>
+                        <a 
+                            href="#explore-menu" 
+                            className={activeMenu === "menu" ? "active" : "null"}>
+                            menu
+                        </a>
+                        <a 
+                            href="#app-download" 
+                            className={activeMenu === "mobile-app" ? "active" : "null"}>
+                                mobile-app
+                        </a>
+                        <a 
+                            href="#footer" 
+                            className={activeMenu === "contact-us" ? "active" : "null"}>
+                                contact us
+                        </a>
                     </ul>
                     <div className="navbar-right">
                         <img src={assets.search_icon} />
