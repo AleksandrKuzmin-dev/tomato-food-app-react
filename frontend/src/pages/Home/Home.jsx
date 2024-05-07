@@ -8,7 +8,7 @@ import './home.css';
 
 
 const Home = () => {
-    const [category, setCategory] = useState('All');
+    const [category, setCategory] = useState('all');
     
     return (
         <div>

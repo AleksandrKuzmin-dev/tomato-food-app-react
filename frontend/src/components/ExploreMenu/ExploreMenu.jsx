@@ -4,7 +4,7 @@ import './exploreMenu.css';
 const ExploreMenu = ({ category, setCategory }) => {
 
     const changeCategory = (item) => {
-        setCategory(state => state === item.menu_name ? 'All' : item.menu_name);
+        setCategory(state => state === item.menu_name ? 'all' : item.menu_name);
     }
 
     return (

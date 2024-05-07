@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {};
 
@@ -8,15 +8,20 @@ const cartItemsSlice = createSlice({
     reducers: {
         addToCart: (state, action) => {
             const id = action.payload;
-
-            if(!state[id]) {
+            if (!state[id]) {
                 state[id] = 1;
             } else {
                 state[id]++;
             }
-        }
-    }
-})
 
-export const { addToCart } = cartItemsSlice.actions;
+        },
+        reduceFromCart: (state, action) => {
+            const id = action.payload;
+            state[id] > 0 ? state[id]-- : (state[id] = 0);
+        },
+    },
+});
+
+export const { addToCart, reduceFromCart } = cartItemsSlice.actions;
+export const selectCartItems = (state) => state.cartItems;
 export default cartItemsSlice.reducer;
