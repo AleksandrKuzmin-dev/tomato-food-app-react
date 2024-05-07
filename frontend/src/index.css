@@ -5,6 +5,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Outfit;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,7 +17,7 @@ a {
   color: inherit;
 }
 
-.app {
+.app-wrapper {
   width: 80%;
   margin: auto;
 }

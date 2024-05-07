@@ -27,7 +27,7 @@
 
 .header-contents p {
     color: white;
-    font-size: 1vw;
+    font-size: max(1vw, 12px);
 }
 
 .header-contents button {
@@ -38,4 +38,35 @@
     background-color: white;
     font-size: max(1vw,13px);
     border-radius: 50px;
+}
+
+@media (max-width: 1050px) {
+   
+}
+
+@media (max-width: 750px) {
+
+    .header-contents {
+        max-width: 55%;
+    }
+    .header-contents h2 {
+        margin-bottom: 10px;
+    }
+
+    .header-contents p {
+        display: none;
+    }
+
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}
+
+
+@media (max-width: 410px) {
+
+    .header-contents {
+        max-width: 70%;
+    }
+    
 }
