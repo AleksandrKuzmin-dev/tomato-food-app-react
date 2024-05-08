@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { setFoodCatalog, selectFoodCatalog } from '../../store/slices/foodCatalog.slice';
 import useInViewBlock from '../../hooks/useInViewBlock';
+import FoodItem from '../FoodItem/FoodItem';
 
 import './foodDisplay.css';
-import FoodItem from '../FoodItem/FoodItem';
 
 const FoodDisplay = ({ category }) => {
     const dispatch = useDispatch();
