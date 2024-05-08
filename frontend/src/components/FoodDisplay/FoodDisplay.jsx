@@ -9,7 +9,7 @@ import FoodItem from '../FoodItem/FoodItem';
 const FoodDisplay = ({ category }) => {
     const dispatch = useDispatch();
     const foodCatalog = useSelector(selectFoodCatalog);
-    const [ref] = useInViewBlock('menu', 0.2);
+    const ref = useInViewBlock('menu', 0.2);
 
     useEffect(() => {
         dispatch(setFoodCatalog());
@@ -19,9 +19,9 @@ const FoodDisplay = ({ category }) => {
         <div className="food-display" id="food-display" ref={ref}>
             <h2>Top dishes near you</h2>
             <div className="food-display-list">
-                {foodCatalog.map(item => {
+                {foodCatalog.map((item) => {
                     if (category === 'all' || item.category === category) {
-                        return <FoodItem key={item._id} item={item} />  
+                        return <FoodItem key={item._id} item={item} />;
                     }
                 })}
             </div>

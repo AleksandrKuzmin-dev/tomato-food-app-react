@@ -9,9 +9,10 @@ import { assets } from '../../assets/assets';
 import './navbar.css';
 
 
-const Navbar = () => {
+const Navbar = ({setShowLogin}) => {
     const activeMenu = useSelector(selectHomeNavActive);
     const [hasShadow, setHasShadow] = useState(false);
+
     useEffect(() => {
         const handleScroll = () => {
           const isTop = window.scrollY < 100;
@@ -69,7 +70,7 @@ const Navbar = () => {
                             <img src={assets.basket_icon} alt="" />
                             <div className="dot"></div>
                         </div>
-                        <button>sign in</button>
+                        <button onClick={() => setShowLogin(true)}>sign in</button>
                     </div>
                 </div>
             </div>

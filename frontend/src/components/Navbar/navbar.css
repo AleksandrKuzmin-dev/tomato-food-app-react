@@ -1,7 +1,7 @@
 .navbar-wrapper {
     background-color: white;
     top: 0px;
-    z-index: 1000;
+    z-index: 1;
     transition: box-shadow .3s;
     position: sticky;
 }

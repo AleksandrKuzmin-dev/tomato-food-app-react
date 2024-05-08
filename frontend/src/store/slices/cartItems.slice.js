@@ -7,17 +7,16 @@ const cartItemsSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            const id = action.payload;
-            if (!state[id]) {
-                state[id] = 1;
+            const itemId = action.payload;
+            if (!state[itemId]) {
+                state[itemId] = 1;
             } else {
-                state[id]++;
+                state[itemId]++;
             }
-
         },
         reduceFromCart: (state, action) => {
-            const id = action.payload;
-            state[id] > 0 ? state[id]-- : (state[id] = 0);
+            const itemId = action.payload;
+            state[itemId] > 1 ? state[itemId]-- : delete state[itemId];
         },
     },
 });

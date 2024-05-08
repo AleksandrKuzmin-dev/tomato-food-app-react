@@ -2,7 +2,7 @@ import './header.css';
 import useInViewBlock from '../../hooks/useInViewBlock';
 
 const Header = () => {
-  const [ref] = useInViewBlock('home');
+  const ref = useInViewBlock('home');
   
   return (
     <div className="header" ref={ref}>

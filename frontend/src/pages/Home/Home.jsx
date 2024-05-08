@@ -9,7 +9,7 @@ import './home.css';
 
 const Home = () => {
     const [category, setCategory] = useState('all');
-    console.log('render')
+
     return (
         <div id="home">
             <Header />
