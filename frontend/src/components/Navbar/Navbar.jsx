@@ -6,10 +6,13 @@ import { selectHomeNavActive } from '../../store/slices/homeNavActive.slice';
 import { assets } from '../../assets/assets';
 
 import './navbar.css';
+import { selectTotalAmount } from '../../store/slices/cartItems.slice';
 
 const Navbar = ({ setShowLogin }) => {
-    const activeMenu = useSelector(selectHomeNavActive);
     const [hasShadow, setHasShadow] = useState(false);
+
+    const activeMenu = useSelector(selectHomeNavActive);
+    const totalCartAmount = useSelector(selectTotalAmount);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -67,7 +70,7 @@ const Navbar = ({ setShowLogin }) => {
                         <div className="navbar-bag-icon">
                             <Link to="/cart">
                                 <img src={assets.basket_icon} alt="" />
-                                <div className="dot"></div>
+                                <div className={totalCartAmount === 0 ? "" : "dot"}></div>
                             </Link>
                         </div>
                         <button onClick={() => setShowLogin(true)}>sign in</button>
