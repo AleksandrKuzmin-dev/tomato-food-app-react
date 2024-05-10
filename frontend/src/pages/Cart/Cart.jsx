@@ -1,13 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartItems, selectTotalAmount, removeFromCart } from '../../store/slices/cartItems.slice';
+import { useNavigate } from 'react-router-dom';
 import './cart.css';
 
 const Cart = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const cartItems = useSelector(selectCartItems);
     const totalAmount = useSelector(selectTotalAmount);
-
 
 
     return (
@@ -50,15 +51,15 @@ const Cart = () => {
                         <hr />
                         <div className="cart-total-details">
                             <p>Delivery Fee</p>
-                            <p>${2}</p>
+                            <p>${totalAmount === 0 ? 0 : 2}</p>
                         </div>
                         <hr />
                         <div className="cart-total-details">
                             <b>Total</b>
-                            <b>${totalAmount + 2}</b>
+                            <b>${totalAmount === 0 ? 0 : totalAmount + 2}</b>
                         </div>
                     </div>
-                    <button>PROCEED TO CHECKOUT</button>
+                    <button onClick={() => navigate('/order')}>PROCEED TO CHECKOUT</button>
                 </div>
                 <div className="cart-promocode">
                     <div>

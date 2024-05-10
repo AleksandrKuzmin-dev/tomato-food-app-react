@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 const useKeyListener = (keyCode, onKeyDown) => {
-    console.log('render');
 
     useEffect(() => {
         const handleKeyDown = (e) => {
