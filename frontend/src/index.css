@@ -22,6 +22,21 @@ a {
   margin: auto;
 }
 
+body::-webkit-scrollbar {
+  width: 5px; /* Ширина всего элемента навигации */
+  height: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #fff; /* Цвет дорожки */
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: tomato; /* Цвет бегунка */
+  border-radius: 20px; /* Округление бегунка */
+  border: 3px solid tomato; /* Оформление границ бегунка */
+}
+
 @keyframes fadeIn {
   0%{
     opacity: 0;
