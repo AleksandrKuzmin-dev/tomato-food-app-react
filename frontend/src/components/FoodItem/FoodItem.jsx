@@ -4,9 +4,10 @@ import { selectCartItemById } from '../../store/slices/cartItems.slice';
 import { assets } from '../../assets/assets';
 
 import './foodItem.css';
+import FoodItemRating from '../FoodItemRating/FoodItemRating';
 
 const FoodItem = ({ item }) => {
-    const { _id: id, name, price, description, image } = item;
+    const { _id: id, name, price, description, image, rating } = item;
 
     const dispatch = useDispatch();
     const itemCart = useSelector(selectCartItemById(id));
@@ -39,7 +40,7 @@ const FoodItem = ({ item }) => {
             <div className="food-item-info">
                 <div className="food-item-name-rating">
                     <p>{name}</p>
-                    <img src={assets.rating_starts} alt="rating" />
+                    <FoodItemRating rating={rating} />
                 </div>
                 <p className="food-item-desc">{description}</p>
                 <p className="food-item-price">${price}</p>

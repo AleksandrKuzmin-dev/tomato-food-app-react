@@ -14,8 +14,8 @@ const AppDownload = () => {
                 now and enjoy quick and easy orders from the comfort of your home or office.
             </p>
             <div className="app-download-platforms">
-                <img src={assets.play_store} alt="Google Play" />
-                <img src={assets.app_store} alt="App Store" />
+                <button onClick={() => alert('Это демонстрационная версия, данная функция недоступна.')}><img src={assets.play_store} alt="Google Play"/></button>
+                <button onClick={() => alert('Это демонстрационная версия, данная функция недоступна.')}><img src={assets.app_store} alt="App Store" /></button>
             </div>
         </div>
     );

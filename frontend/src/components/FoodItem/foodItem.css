@@ -5,6 +5,7 @@
     box-shadow: 0px 0px 10px #00000015;
     transition: 0.3s;
     animation: fadeIn 1s;
+    height: 100%;
 }
 
 .food-item-image {
@@ -64,10 +65,6 @@
 .food-item-name-rating p {
     font-size: 20px;
     font-weight: 500;
-}
-
-.food-item-name-rating img {
-    width: 70px;
 }
 
 .food-item-desc {

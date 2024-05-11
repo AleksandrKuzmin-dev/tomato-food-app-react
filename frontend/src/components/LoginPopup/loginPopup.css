@@ -76,6 +76,7 @@
 
 .login-popup-condition input {
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .login-popup p span {

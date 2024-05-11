@@ -1,0 +1,9 @@
+.food-item-rating {
+    width: 70px;
+    display: flex;
+}
+
+.food-item-rating img {
+    width: 15px;
+    
+}
