@@ -62,3 +62,10 @@
         font-size: 14px;
     }
 }
+
+
+@media (max-width: 640px) {
+    .explore-menu {
+        padding-top: 50px;
+    }
+}

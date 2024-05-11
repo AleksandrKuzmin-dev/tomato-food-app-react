@@ -82,13 +82,13 @@ const LoginPopup = ({ setShowLogin }) => {
                         {currentState === 'Sign Up' ? 'Create account' : 'Login'}
                     </button>
                     {currentState === 'Login' ? null : (
-                        <>
+                         <div className="login-popup-input">
                             <div className="login-popup-condition">
                                 <Field name="privacy" type="checkbox" />
                                 <p>By continuing, I agree to the terms of use & privacy policy.</p>
                             </div>
                             <ErrorMessage name="privacy" component="p" className="login-popup-error" />
-                        </>
+                        </div>
                     )}
 
                     {currentState === 'Login' ? (
