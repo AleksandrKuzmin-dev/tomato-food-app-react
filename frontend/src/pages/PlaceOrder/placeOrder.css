@@ -18,12 +18,17 @@
 }
 
 .place-order input {
-    margin-bottom: 15px;
     width: 100%;
     padding: 10px;
     border: 1px solid #c5c5c5;
     border-radius: 4px;
     outline-color: tomato;
+    height: 58px;
+}
+
+.place-order-field {
+    margin-bottom: 15px;
+    width: 100%;
 }
 
 .place-order-left .multi-fields {
@@ -38,6 +43,11 @@
 
 .place-order .cart-total button {
     margin-top: 30px;
+}
+
+.place-order-error {
+    color: red;
+    margin-top: 8px;
 }
 
 @media (max-width: 750px) {

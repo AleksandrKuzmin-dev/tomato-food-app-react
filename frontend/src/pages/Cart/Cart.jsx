@@ -1,15 +1,26 @@
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectCartItems, selectTotalAmount, removeFromCart } from '../../store/slices/cartItems.slice';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './cart.css';
 
 const Cart = () => {
+    const [promo, setPromo] = useState('');
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const cartItems = useSelector(selectCartItems);
     const totalAmount = useSelector(selectTotalAmount);
 
+    if (!Object.keys(cartItems).length) {
+        return (
+            <div className="cart-clear">
+                <h1 className="cart-clear-title">Your cart is still empty.</h1>
+                <Link className="cart-clear-link" to="/">Continue shopping.</Link>
+            </div>
+        );
+    }
 
     return (
         <div className="cart">
@@ -65,8 +76,19 @@ const Cart = () => {
                     <div>
                         <p>If you have a promo code, Enter it here</p>
                         <div className="cart-promocode-input">
-                            <input type="text" placeholder="promo code" />
-                            <button>Submit</button>
+                            <input
+                                type="text"
+                                placeholder="promo code"
+                                value={promo}
+                                onChange={(e) => setPromo(e.target.value)}
+                            />
+                            <button
+                                onClick={() => {
+                                    alert('Это демонстрационная версия, промокоды недоступны');
+                                    setPromo('');
+                                }}>
+                                Submit
+                            </button>
                         </div>
                     </div>
                 </div>

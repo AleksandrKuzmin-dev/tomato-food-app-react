@@ -31,7 +31,7 @@
     font-size: max(1vw, 12px);
 }
 
-.header-contents button {
+.header-contents a {
     border: none;
     color: #747474;
     font-weight: 500;

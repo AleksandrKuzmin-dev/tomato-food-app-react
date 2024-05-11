@@ -10,9 +10,7 @@ const Footer = () => {
                 <div className="footer-content-left">
                     <img src={assets.logo} alt="logo" />
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia necessitatibus quisquam
-                        quibusdam sit quia iste sed nesciunt tempore atque veniam, debitis cupiditate labore sapiente
-                        voluptate aliquam est dolores unde. Dolorum.
+                    At Tomato, we're not just committed, but truly passionate about delivering a culinary experience that tantalizes your tastebuds with the freshest and most delicious meals direct to your doorstep. Our unwavering dedication to providing both premium quality and rapid service ensures that you can savor a dining experience that rivals your favorite restaurants, while relishing the comfort and convenience of your own home. We believe in turning every meal into a special occasion, and with Tomato, you are just a click away from an extraordinary home dining adventure.
                     </p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt="facebook" />
