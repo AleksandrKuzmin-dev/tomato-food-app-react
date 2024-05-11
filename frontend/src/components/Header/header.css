@@ -64,8 +64,12 @@
 }
 
 
-@media (max-width: 410px) {
+@media (max-width: 450px) {
 
+    .header {
+        background-size: cover;
+        height: 45vw;
+    }
     .header-contents {
         max-width: 70%;
     }

@@ -6,6 +6,12 @@
     font-weight: 500;
 }
 
+.app-download h3 {
+    font-size: max(3vw, 20px);
+    text-align: center;
+    font-weight: 500;
+}
+
 .app-download-platforms {
     display: flex;
     justify-content: center;
@@ -17,15 +23,10 @@
     width: max(30vw, 120px);
     max-width: 180px;
     transition: 0.5s;
-    height: 100%;
-}
-
-.app-download-platforms button {
-     border: none;
-    background: unset;
     cursor: pointer;
-
 }
+
+
 
 
 .app-download-platforms img:hover {
@@ -45,6 +46,10 @@
 @media (max-width: 1000px) {
     .app-download__text {
         max-width: 80%;
+    }
+
+    .app-download h3 {
+        font-size: 26px;
     }
 }
 
